@@ -1,25 +1,19 @@
 let arr = [1,4,-3,6,9,10,20,8]
 
 // 1. Tạo một mảng mới chứa các số lớn hơn 5 từ mảng ban đầu (map).
-const newArr = [];
-    arr.map(number =>{
-    if (number > 5){
-        return newArr.push(number);
-    }
-});
-
-console.log("Mảng mới là: " + newArr);
+const newArr = arr.filter((item) => item >5);
+console.log("Mảng mới là " + newArr);
 
 // 2. Sử dụng arrow function và reduce để tính tổng các phần tử trong mảng.
 
-const sum = arr.reduce((a,b) => a + b, 0);
+const sum = arr.reduce((total,current) => total + current, 0);
 
 console.log("Tổng các phần tử trong mảng là: " + sum);
 
 // 3. Kiểm tra 1 mảng có chứa số V hay không nếu có trả về V không thì trả về "không tìm thấy" (some).
 
 let x = arr.some(number => number === 6);
-if (x === true){
+if (x){
     console.log("Phần tử trên có xuất hiện trong mảng")
 } else  {
     console.log("Phần tử trên không xuất hiện trong mảng")
@@ -28,7 +22,7 @@ if (x === true){
 // 4. Kiểm tra 1 mảng tất cả các phần tử trong mảng đó có lớn hơn 0 hay không? (every).
 
 let y = arr.every(number => number > 0);
-if (y === true){
+if (y){
     console.log("Tất cả các phẩn tử trong mảng đều lớn hơn 0")
 } else  {
     console.log("Có phần tử trong mảng nhỏ hơn 0")
@@ -47,7 +41,7 @@ console.log("Các phần tử còn lại là: " + rest)
 
 // 7. Sử dụng destructuring để trích xuất các giá trị "name" và "age" từ một mảng chứa các đối tượng "person".
 
-const person = [
+const persons = [
     {
         name : "Lê Văn A",
         age: 30
@@ -61,7 +55,7 @@ const person = [
         age: 40
     },
 ]
-const [person1,person2,person3] = person;
+const [person1,person2,person3] = persons;
 
 console.log(person1.name)
 console.log(person2.name)
@@ -75,7 +69,7 @@ console.log(person3.age)
 // 8. Sử dụng Rest parameter và Spread operator để tạo một hàm nhận vào danh sách các số và trả về tổng của chúng.
 
 const sumArray = ([...arrNumber]) => {
-    return arrNumber.reduce((a,b) => a+b,0)
+    return arrNumber.reduce((total,current) => total+current,0)
 }
 console.log("Tổng của mảng là " + sumArray([1,2,3,4]))
 
