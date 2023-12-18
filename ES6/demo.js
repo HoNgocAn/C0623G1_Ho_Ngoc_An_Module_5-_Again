@@ -57,6 +57,9 @@ const persons = [
 ]
 const [person1,person2,person3] = persons;
 
+for (const { name, age } of persons) {
+    console.log(`Name: ${name}, Age: ${age}`);
+}
 console.log(person1.name)
 console.log(person2.name)
 console.log(person3.name)

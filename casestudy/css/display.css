@@ -1,0 +1,51 @@
+.footer-col-3 {
+    padding-top: 30px;
+    padding-left: 50px;
+    background-color: lightblue;
+}
+.footer-col-2 {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+.footer-col-1 {
+    background-color: lightblue;
+}
+.footer-col-4 {
+    padding-top: 20px;
+    background-color: lightblue;
+}
+.footer-icon {
+   font-size: 100%;
+}
+h2 {
+    color: burlywood;
+    font-family: "Times New Roman";
+}
+h3 {
+    color: burlywood;
+    font-family: "Times New Roman";
+}
+p{
+    font-family: "Times New Roman";
+}
+.p-row-2 {
+   font-size: 30px;
+    font-family: "Times New Roman";
+    color: darksalmon
+}
+.row-3-img {
+    width: 400px;
+    height: 300px;
+    padding-bottom: 20px;
+}
+.row-4-room {
+    text-align: center;
+}
+.row-4 {
+    padding: 30px;
+}
+.row-6 {
+    padding-bottom: 30px;
+}
+
