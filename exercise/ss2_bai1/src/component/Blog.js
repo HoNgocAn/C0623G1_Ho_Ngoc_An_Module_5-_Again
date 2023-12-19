@@ -1,7 +1,8 @@
 import React from "react";
+import {useState} from "react";
 
 function Blog () {
-    const post = [
+    const [post, setPost] = useState([
         {
             id : 1,
             title: "5 Best Crypto Performers During The 2022 Market Flop",
@@ -20,8 +21,25 @@ function Blog () {
             category: "Opinion",
             time: "a day ago"
         }
-    ]
+    ])
 
+    const [form, setForm] = useState({});
+
+    function handleChange(event) {
+        setForm({
+            ...form,
+            [event.target.name]: event.target.value
+        });
+    }
+
+    function handleSubmit() {
+        const isValid = form.title && form.category && form.time;
+       if(isValid) {
+           setPost(prevState => [...prevState, form]);
+       }
+    }
+
+    console.log(form)
 
     return (
         <div className="container">
@@ -51,6 +69,45 @@ function Blog () {
                 ))}
                 </tbody>
             </table>
+
+            <h1>Sign up</h1>
+            <form>
+                <div className="custom-input">
+                    <label>ID </label><br/>
+                    <input
+                        name="id"
+                        value={form.id || ""}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="custom-input">
+                    <label>TITLE </label><br/>
+                    <input
+                        name="title"
+                        value={form.title || ""}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="custom-input">
+                    <label>Category </label><br/>
+                    <input
+                        name="category"
+                        value={form.category || ""}
+                        onChange={handleChange}
+                    />
+                </div>
+                <div className="custom-input">
+                    <label>Time </label><br/>
+                    <input
+                        name="time"
+                        value={form.time || ""}
+                        onChange={handleChange}
+                    />
+                </div>
+                <button type="button" onClick={handleSubmit}>
+                    Submit
+                </button>
+            </form>
         </div>
     )
 }

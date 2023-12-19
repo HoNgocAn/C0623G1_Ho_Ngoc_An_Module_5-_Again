@@ -48,4 +48,11 @@ h1 {
 .title {
   color: dodgerblue;
 }
+label {
+  display: block;
+}
+
+.custom-input {
+  padding-bottom: 2%;
+}
 
