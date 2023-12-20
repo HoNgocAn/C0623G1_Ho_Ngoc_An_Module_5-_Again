@@ -1,37 +1,34 @@
 import React, {useState, useEffect} from "react";
 
-class Greeting extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            firstName : window.localStorage.getItem('classFirstName') ||'',
-            lastName: window.localStorage.getItem('classLastName') || '',
-        }
-        this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-        this.handleLastNameChange = this.handleLastNameChange.bind(this);
+function Greeting () {
+
+    const [firstname, setFirstName] = useState("")
+
+    const [lastname, setLastName] = useState("")
+
+
+    const handleFirstNameChange =( e ) => {
+        setFirstName(e.target.value)
+    }
+    const handleLastNameChange =(e) =>{
+        setLastName(e.target.value)
     }
 
-    handleFirstNameChange = (e) => this.setState({firstName: e.target.value});
-    handleLastNameChange = (e) => this.setState({lastName: e.target.value});
+    return (
+        <div>
+            <input value={firstname} onChange={handleFirstNameChange}/>
+            <br/>
+            <input value={lastname} onChange={handleLastNameChange}/>
 
-    render() {
-        return (
-            <div>
-                <input  value={this.state.firstName} onChange={this.handleFirstNameChange}/>
-                <br/>
-                <input value={this.state.lastName } onChange={this.handleLastNameChange}/>
+            <p>
+                Hello, {" "}
+                <span>
+                        {firstname} {lastname}
+                </span>
+            </p>
+        </div>
 
-                <p>
-                    Hello, {" "}
-                    <span>
-                        {this.state.firstName} {this.state.lastName}
-                    </span>
-                </p>
-            </div>
-        )
-    }
-
+    )
 }
-
 
 export default Greeting
