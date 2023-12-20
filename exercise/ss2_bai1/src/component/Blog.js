@@ -25,21 +25,26 @@ function Blog () {
 
     const [form, setForm] = useState({});
 
-    function handleChange(event) {
+    const handleChange =(event) => {
         setForm({
             ...form,
             [event.target.name]: event.target.value
         });
     }
 
-    function handleSubmit() {
-        const isValid = form.title && form.category && form.time;
+    const handleSubmit = () => {
+        const isValid = form.id && form.title && form.category && form.time;
        if(isValid) {
            setPost(prevState => [...prevState, form]);
        }
     }
 
-    console.log(form)
+   const handleDelete = (item) =>{
+       const newPost = post.filter(blog => blog.id !== item.id)
+       if (newPost){
+           setPost(newPost)
+       }
+    }
 
     return (
         <div className="container">
@@ -62,16 +67,17 @@ function Blog () {
                     <td scope="col">{item.category}</td>
                     <td scope="col">{item.time}</td>
                     <td>
-                        <button type="button" className="btn btn-secondary btn-sm">Edit</button>
-                        <button type="button" className="btn btn-danger btn-sm">Delete</button>
+                        <button type="button" className="btn btn-secondary btn-sm" >Edit</button>
+                        <button type="button" className="btn btn-danger btn-sm" onClick={() => handleDelete(item)}>Delete</button>
+
                     </td>
                 </tr>
                 ))}
                 </tbody>
             </table>
 
-            <h1>Sign up</h1>
-            <form>
+            <h1>Add New Blog</h1>
+            <form className="form-add">
                 <div className="custom-input">
                     <label>ID </label><br/>
                     <input
@@ -104,10 +110,11 @@ function Blog () {
                         onChange={handleChange}
                     />
                 </div>
-                <button type="button" onClick={handleSubmit}>
-                    Submit
+                <button type="button" className="btn btn-primary" onClick={handleSubmit}>
+                    Add
                 </button>
             </form>
+
         </div>
     )
 }
