@@ -2,6 +2,8 @@ import React from "react";
 import {useState} from "react";
 
 function Blog () {
+
+    const [error, setError] = useState("")
     const [post, setPost] = useState([
         {
             id : 1,
@@ -36,6 +38,9 @@ function Blog () {
         const isValid = form.id && form.title && form.category && form.time;
        if(isValid) {
            setPost(prevState => [...prevState, form]);
+           setError("")
+       } else {
+          setError("Please fill out all the fields!!!")
        }
     }
 
@@ -52,7 +57,7 @@ function Blog () {
             <table className="table">
                 <thead className="table-dark">
                 <tr>
-                    <td scope="col" >ID</td>
+                    <td scope="col">ID</td>
                     <td scope="col">TITLE</td>
                     <td scope="col">CATEGORY</td>
                     <td scope="col">TIME</td>
@@ -69,7 +74,6 @@ function Blog () {
                     <td>
                         <button type="button" className="btn btn-secondary btn-sm" >Edit</button>
                         <button type="button" className="btn btn-danger btn-sm" onClick={() => handleDelete(item)}>Delete</button>
-
                     </td>
                 </tr>
                 ))}
@@ -77,6 +81,7 @@ function Blog () {
             </table>
 
             <h1>Add New Blog</h1>
+            <p className="error"> {error}</p>
             <form className="form-add">
                 <div className="custom-input">
                     <label>ID </label><br/>
