@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<body>
+<script>
+    let count = 10
+
+    function Counter() {
+        let counter = count - 1;
+        count = count -1
+
+
+
+    }
+
+   let timeId= setInterval(Counter, 1000)
+
+
+   setTimeout(()=>{ clearInterval(timeId); alert("Hết giờ") }, 10000)
+
+</script>
+</body>
+</html>
