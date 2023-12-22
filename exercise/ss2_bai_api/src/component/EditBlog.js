@@ -18,9 +18,9 @@ function EditBlog() {
     const [post, setPost] = useState();
 
     const validateForm = {
-        title : yup.string().required("Không được để trống trường này *"),
-        category : yup.string().required("Không được để trống trường này *"),
-        time : yup.string().required("Không được để trống trường này *"),
+        title : yup.string().required("Không được để trống title *"),
+        category : yup.string().required("Không được để trống category *"),
+        time : yup.string().required("Không được để trống time *"),
 
     };
 

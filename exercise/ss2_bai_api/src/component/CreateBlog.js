@@ -17,9 +17,9 @@ function CreateBlog() {
         time: ""
     }
     const validateForm = {
-        title : yup.string().required("Không được để trống trường này *"),
-        category : yup.string().required("Không được để trống trường này *"),
-        time : yup.string().required("Không được để trống trường này *"),
+        title : yup.string().required("Không được để trống title *"),
+        category : yup.string().required("Không được để trống category *"),
+        time : yup.string().required("Không được để trống time  *"),
 
     };
     const createPost = (post) => {
@@ -28,7 +28,7 @@ function CreateBlog() {
             toast.success("Thêm mới thành công!!!!!");
             navigate("/");
         }
-        console.log("thêm mới thất bại!!!");
+        console.log("Thêm mới thất bại!!!");
     };
 
 
