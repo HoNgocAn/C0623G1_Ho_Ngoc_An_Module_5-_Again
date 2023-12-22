@@ -15,7 +15,7 @@ function EditBlog() {
 
     const param = useParams();
 
-    const [blog, setBlog] = useState();
+    const [post, setPost] = useState();
 
     const validateForm = {
         title : yup.string().required("Không được để trống trường này *"),
@@ -25,13 +25,13 @@ function EditBlog() {
     };
 
     const findBlogById = async () => {
-        const data = await Method.findByIdBlog(param.id);
-        setBlog(data);
+        const data = await Method.findById(param.id);
+        setPost(data);
         console.log(data)
     };
 
     const handleSubmit = async (value) => {
-        const isSuccess = await Method.updateByIdBlog(value, blog);
+        const isSuccess = await Method.updateById(value, post);
         if(isSuccess){
         toast.success("Chính sửa thành công!!!!!");
         }
@@ -42,7 +42,7 @@ function EditBlog() {
         findBlogById();
     }, []);
 
-    if (!blog) {
+    if (!post) {
         return null;
     }
 
@@ -50,7 +50,7 @@ function EditBlog() {
         <>
             <h3 className="mt-3">Sửa bài</h3>
 
-            <Formik initialValues={{...blog}}
+            <Formik initialValues={{...post}}
                     onSubmit={(value) => {
                         handleSubmit(value)
                     }}

@@ -26,17 +26,17 @@ export const savePost = async (post) => {
     }
 }
 
-export const findByIdBlog = async (id) =>{
+export const findById = async (id) =>{
     try {
-        const blog = await axios.get("http://localhost:8080/post/"+id);
-        return blog.data;
+        const rs = await axios.get(`http://localhost:8080/post/${id}`);
+        return rs.data;
     }catch (e){
         return false;
     }
 }
-export const updateByIdBlog = async (blog) => {
+export const updateById = async (post) => {
     try {
-        await  axios.put(`http://localhost:8080/post/${blog.id}`,blog);
+        await  axios.put(`http://localhost:8080/post/${post.id}`,post);
         return true;
     }catch (e){
         return false;

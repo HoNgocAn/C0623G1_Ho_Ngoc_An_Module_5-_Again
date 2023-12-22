@@ -27,10 +27,11 @@ function Blog () {
     const deletePost = async () => {
         const isSuccess = await Method.deletePost(postDelete.id)
         if (isSuccess){
-            toast.success("Đã xóa thành công")
+            toast.error("Đã xóa thành công")
             getAll();
         }
     }
+
 
     if (!post) {
         return null;
