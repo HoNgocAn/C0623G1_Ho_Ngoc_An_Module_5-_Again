@@ -10,6 +10,7 @@ import * as Method from "../../src/service/Method"
 function CreateBlog() {
 
     const navigate = useNavigate();
+
     const initValue = {
         title: "",
         category: "",

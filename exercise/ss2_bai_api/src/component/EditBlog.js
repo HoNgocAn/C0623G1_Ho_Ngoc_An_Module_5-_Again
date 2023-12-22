@@ -17,12 +17,6 @@ function EditBlog() {
 
     const [blog, setBlog] = useState();
 
-    const initValue = {
-        title: "",
-        category: "",
-        time: '',
-    }
-
     const validateForm = {
         title : yup.string().required("Không được để trống trường này *"),
         category : yup.string().required("Không được để trống trường này *"),
@@ -36,8 +30,8 @@ function EditBlog() {
         console.log(data)
     };
 
-    const handleSubmit = (value) => {
-        const isSuccess = Method.updateByIdBlog(value, blog);
+    const handleSubmit = async (value) => {
+        const isSuccess = await Method.updateByIdBlog(value, blog);
         if(isSuccess){
         toast.success("Chính sửa thành công!!!!!");
         }
