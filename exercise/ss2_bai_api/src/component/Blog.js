@@ -2,6 +2,7 @@ import React from "react";
 import {useState, useEffect} from "react";
 import * as Method from "../../src/service/Method"
 import { toast } from "react-toastify";
+import {Link} from "react-router-dom";
 
 
 function Blog () {
@@ -26,7 +27,7 @@ function Blog () {
     const deletePost = async () => {
         const isSuccess = await Method.deletePost(postDelete.id)
         if (isSuccess){
-            toast.error("Đã xóa thành công")
+            toast.success("Đã xóa thành công")
             getAll();
         }
     }
@@ -35,9 +36,21 @@ function Blog () {
         return null;
     }
 
+
     return (
         <div className="container">
             <h1>List Post</h1>
+
+            <div className="text-end fst-italic">
+                <Link
+                    class="nav-link active"
+                    className="btn btn-success mb-3"
+                    aria-current="page"
+                    to="/create"
+                >
+                    Add Post
+                </Link>
+            </div>
             <table className="table">
                 <thead className="table-dark">
                 <tr>
@@ -56,7 +69,11 @@ function Blog () {
                         <td scope="col">{item.category}</td>
                         <td scope="col">{item.time}</td>
                         <td>
-                            <button type="button" className="btn btn-secondary btn-sm">Sửa</button>
+                            <Link to={`/edit/${item.id}`}>
+                                <button className="btn btn-sm btn-primary rounded-0">
+                                    Edit
+                                </button>
+                            </Link>
                             <button
                                 type="button"
                                 data-bs-toggle="modal"
