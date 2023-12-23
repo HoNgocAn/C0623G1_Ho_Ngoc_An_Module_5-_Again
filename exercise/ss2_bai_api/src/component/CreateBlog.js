@@ -19,7 +19,7 @@ function CreateBlog() {
     const validateForm = {
         title : yup.string().required("Không được để trống title *"),
         category : yup.string().required("Không được để trống category *"),
-        time : yup.string().required("Không được để trống time  *"),
+        time : yup.string().required("Không được để trống time *"),
 
     };
     const createPost = (post) => {
