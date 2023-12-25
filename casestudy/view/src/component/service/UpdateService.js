@@ -4,7 +4,7 @@ function UpdateService() {
 
     return (
         <div className="container center-createService">
-            <h3>Sửa dịch vụ</h3>
+            <h3 className="h3-black">Sửa dịch vụ</h3>
             <form>
                 <div className="mb-3">
                     <label className="form-label">Tên dịch vụ </label>
@@ -57,7 +57,7 @@ function UpdateService() {
                     <label htmlFor="inputServiceFree" className="form-label">Dịch vụ miễn phí đi kèm</label>
                     <input type="text" className="form-control" id="inputServiceFree"/>
                 </div>
-                <button type="submit" className="btn btn-primary">Xác nhận</button>
+                <button type="submit" className="btn btn-primary">Chỉnh sửa</button>
             </form>
 
         </div>

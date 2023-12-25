@@ -4,7 +4,7 @@ function CreateService() {
 
     return (
         <div className="container center-createService">
-            <h3 >Thêm dịch vụ</h3>
+            <h3 className="h3-black" >Thêm dịch vụ</h3>
             <form>
                 <div className="mb-3">
                     <label className="form-label">Tên dịch vụ </label>

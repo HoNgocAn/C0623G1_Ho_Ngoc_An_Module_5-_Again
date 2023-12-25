@@ -7,7 +7,7 @@ function ListCustomer () {
             <h2 className="h2-customer">Danh sách khách hàng</h2><br/>
 
             <table className="table-customer">
-                <thead >
+                <thead className="thead-customer">
                 <tr>
                     <th scope="col">STT</th>
                     <th scope="col">Họ tên</th>

@@ -10,6 +10,9 @@ import img_7 from "../img/img_7.jpg";
 import img_8 from "../img/img_8.jpg";
 import img_9 from "../img/img_9.jpg";
 import img_10 from "../img/img_10.jpg";
+import Header from "./Header";
+import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 
 
@@ -17,6 +20,8 @@ function Home() {
 
     return (
         <div className="container">
+            <Header/>
+            <Navigation/>
             <div id="carouselExample" className="carousel slide">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -153,6 +158,7 @@ function Home() {
                         <p className="text-room">Diện Tích Phòng: 43.7 m<sup>2</sup></p>
                 </div>
             </div>
+            <Footer/>
 
         </div>
 

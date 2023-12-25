@@ -4,7 +4,7 @@ function UpdateCustomer (){
 
     return (
         <div className="container center-createService">
-            <h3>TSửa thông tin khách hàng</h3>
+            <h3 className="h3-black">TSửa thông tin khách hàng</h3>
             <form>
                 <div className="mb-3">
                     <label htmlFor="inputName" className="form-label">Họ tên</label>
@@ -49,7 +49,7 @@ function UpdateCustomer (){
                     <label htmlFor="inputAddress" className="form-label">Địa chỉ</label>
                     <input type="text" className="form-control" id="inputAddress"/>
                 </div>
-                <button type="submit" className="btn btn-primary">Thêm mới</button>
+                <button type="submit" className="btn btn-primary">Chỉnh sửa</button>
             </form>
 
         </div>

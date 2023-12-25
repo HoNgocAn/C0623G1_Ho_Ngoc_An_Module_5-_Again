@@ -144,6 +144,9 @@ p{
 .table-customer {
   background-color: lightsteelblue;
 }
+.table-contract {
+  background-color: lightsteelblue;
+}
 
 .h2-service {
   text-align: center;
@@ -153,10 +156,24 @@ p{
   text-align: center;
   padding-top: 20px;
 }
+.h2-contract {
+  text-align: center;
+  padding-top: 20px;
+}
 
 
 .thead-service{
   background-color: grey;
+}
+
+.thead-customer{
+  background-color: grey;
+}
+.thead-contract{
+  background-color: grey;
+}
+.h3-black {
+  color: black;
 }
 
 

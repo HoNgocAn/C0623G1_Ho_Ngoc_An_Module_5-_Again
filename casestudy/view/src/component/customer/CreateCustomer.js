@@ -5,7 +5,7 @@ function CreateCustomer() {
 
     return (
         <div className="container center-createService">
-            <h3>Thêm khách hàng</h3>
+            <h3 className="h3-black">Thêm khách hàng</h3>
             <form>
                 <div className="mb-3">
                     <label htmlFor="inputName" className="form-label">Họ tên</label>

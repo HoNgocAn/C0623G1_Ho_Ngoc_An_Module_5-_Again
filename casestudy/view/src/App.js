@@ -10,6 +10,8 @@ import ListCustomer from "./component/customer/ListCustomer";
 import CreateCustomer from "./component/customer/CreateCustomer";
 import UpdateCustomer from "./component/customer/UpdateCustomer";
 import Home from "./component/Home";
+import ListContract from "./component/contract/ListContract";
+import CreateContract from "./component/contract/CreateContract";
 
 function App() {
   return (
