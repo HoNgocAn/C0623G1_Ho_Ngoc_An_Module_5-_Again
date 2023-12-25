@@ -17,6 +17,7 @@ export const deletePost = async (id) =>{
         return false;
     }
 }
+
 export const savePost = async (post) => {
     try {
         await axios.post("http://localhost:8080/post", post);

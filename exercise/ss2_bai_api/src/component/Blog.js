@@ -1,6 +1,6 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import * as Method from "../../src/service/Method"
+import * as method from "../service/method"
 import { toast } from "react-toastify";
 import {Link} from "react-router-dom";
 
@@ -16,7 +16,7 @@ function Blog () {
     }, []);
 
     const getAll = async () => {
-        let data = await Method.getAllPost();
+        let data = await method.getAllPost();
         setPost(data);
     }
 
@@ -25,7 +25,7 @@ function Blog () {
     };
 
     const deletePost = async () => {
-        const isSuccess = await Method.deletePost(postDelete.id)
+        const isSuccess = await method.deletePost(postDelete.id)
         if (isSuccess){
             toast.error("Đã xóa thành công")
             getAll();

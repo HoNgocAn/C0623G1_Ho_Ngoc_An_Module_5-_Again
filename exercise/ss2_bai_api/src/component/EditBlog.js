@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import {useNavigate} from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import * as Method from "../../src/service/Method"
+import * as method from "../service/method"
 
 import {useParams} from "react-router-dom";
 
@@ -25,13 +25,13 @@ function EditBlog() {
     };
 
     const findBlogById = async () => {
-        const data = await Method.findById(param.id);
+        const data = await method.findById(param.id);
         setPost(data);
         console.log(data)
     };
 
     const handleSubmit = async (value) => {
-        const isSuccess = await Method.updateById(value, post);
+        const isSuccess = await method.updateById(value, post);
         if(isSuccess){
         toast.success("Chính sửa thành công!!!!!");
         }

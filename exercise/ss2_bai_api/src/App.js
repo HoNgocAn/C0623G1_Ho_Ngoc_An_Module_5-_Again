@@ -6,13 +6,17 @@ import CreateBlog from "./component/CreateBlog";
 import EditBlog from "./component/EditBlog";
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import BlogSaga from "./component/BlogSaga";
+import CreateBlogSaga from "./component/CreateBlogSaga";
 
 function App() {
   return (
     <div >
         <Routes>
-            <Route path="/" element={<Blog/>} />
+            <Route path="/" element={<BlogSaga/>} />
+            <Route path="/post" element={<Blog/>} />
             <Route path="/create" element={<CreateBlog/>}/>
+            <Route path="/create-saga" element={<CreateBlogSaga/>}/>
             <Route path="/edit/:id" element={<EditBlog/>}/>
             <Route path="/edit" element={<EditBlog/>} />
         </Routes>

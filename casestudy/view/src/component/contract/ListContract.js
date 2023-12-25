@@ -1,10 +1,14 @@
 import React from "react";
+import Header from "../Header";
+import Navigation from "../Navigation";
+import Footer from "../Footer";
 
 function ListContract () {
 
     return (
         <div className="container">
-
+            <Header/>
+            <Navigation/>
             <h2 className="h2-contract">Danh sách hợp đồng</h2><br/>
 
             <table className="table-contract" >
@@ -49,6 +53,7 @@ function ListContract () {
                     <a href="#">&raquo;</a>
                 </div>
             </div>
+            <Footer/>
         </div>
 
     )

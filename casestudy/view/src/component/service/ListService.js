@@ -2,28 +2,16 @@ import React from "react";
 import img_5 from "../../img/img_5.jpg";
 import img_6 from "../../img/img_6.jpg";
 import img_7 from "../../img/img_7.jpg";
+import Header from "../Header";
+import Navigation from "../Navigation";
+import Footer from "../Footer";
 
 function ListService() {
     return (
         <div className="container">
-            <div className="row row-1">
-                <div className="col-12 col-lg-4">
-                    <img src={img_5} className="row-3-img"/>
-                        <p className="text-room">VILLA</p>
-                        <p className="text-room">Diện Tích Phòng: 100 m <sup/>2<sup/></p>
-                </div>
-                <div className="col-12 col-lg-4">
-                    <img src={img_6} className="row-3-img"/>
-                        <p className="text-room">HOUSE</p>
-                        <p className="text-room">Diện Tích Phòng: 40 m<sup/>2<sup/></p>
-                </div>
-                <div className="col-12 col-lg-4">
-                    <img src={img_7} className="row-3-img"/>
-                        <p className="text-room">ROOM</p>
-                        <p className="text-room">Diện Tích Phòng: 15 m<sup/>2<sup/></p>
-                </div>
-            </div>
-
+            <Header/>
+            <Navigation/>
+            
             <h2 className="h2-service" >Danh sách dịch vụ</h2><br/>
 
             <table className="table-service">
@@ -112,6 +100,7 @@ function ListService() {
                     <a href="#">&raquo;</a>
                 </div>
             </div>
+            <Footer/>
         </div>
     )
 }

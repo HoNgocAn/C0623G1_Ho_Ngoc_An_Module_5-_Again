@@ -1,9 +1,14 @@
 import React from "react";
+import Header from "../Header";
+import Navigation from "../Navigation";
+import Footer from "../Footer";
 
 function ListCustomer () {
 
     return (
         <div className="container">
+            <Header/>
+            <Navigation/>
             <h2 className="h2-customer">Danh sách khách hàng</h2><br/>
 
             <table className="table-customer">
@@ -41,6 +46,7 @@ function ListCustomer () {
                 </tr>
                 </tbody>
             </table>
+            <Footer/>
         </div>
 
     )

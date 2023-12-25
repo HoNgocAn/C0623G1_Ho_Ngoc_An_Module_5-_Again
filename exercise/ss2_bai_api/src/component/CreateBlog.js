@@ -1,10 +1,11 @@
 import React from "react";
 
 import { toast } from "react-toastify";
-import {useNavigate} from "react-router-dom";
+
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as yup from "yup";
-import * as Method from "../../src/service/Method"
+import * as method from "../service/method"
+import {useNavigate} from "react-router-dom";
 
 
 function CreateBlog() {
@@ -23,12 +24,13 @@ function CreateBlog() {
 
     };
     const createPost = (post) => {
-        let isSuccess = Method.savePost(post);
+        let isSuccess = method.savePost(post);
         if (isSuccess) {
             toast.success("Thêm mới thành công!!!!!");
-            navigate("/");
+            navigate("/post");
+        } else {
+            toast.error("Thêm mới thất bại");
         }
-        console.log("Thêm mới thất bại!!!");
     };
 
 
