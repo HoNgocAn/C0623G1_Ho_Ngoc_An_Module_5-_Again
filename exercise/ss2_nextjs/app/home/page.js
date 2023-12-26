@@ -1,8 +1,8 @@
-import Link from "next/link";
-import styles from "../app/home.module,.css"
-import {getPost} from "../data/data";
+import styles from "../home.module.css"
+import {getPost} from "../../data/data";
+import 'bootstrap/dist/css/bootstrap.css';
 
-export default function Display() {
+function Display() {
     return (
         <div className={styles.container}>
             <main className={styles.main}>
@@ -13,6 +13,7 @@ export default function Display() {
                         <th className={styles.th}>TITLE</th>
                         <th className={styles.th}>CATEGORY</th>
                         <th className={styles.th}>TIME</th>
+                        <th className={styles.th}>ACTION</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -38,3 +39,4 @@ export default function Display() {
         </div>
     );
 }
+export default Display
