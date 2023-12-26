@@ -175,7 +175,18 @@ p{
 .h3-black {
   color: black;
 }
-
+.table-customer {
+  width: 100%;
+}
+.table-service{
+  width: 100%;
+}
+.table-contract{
+  width: 100%;
+}
+.err-name {
+  color: red;
+}
 
 
 

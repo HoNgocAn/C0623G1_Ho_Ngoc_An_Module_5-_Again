@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 function Navigation() {
     return (
-    <div className="container">
+    <div className="container px-0">
         <div className="px-3 py-2 bg-success text-white">
             <div className=" align-items-center justify-content-center justify-content-lg-start">
                 <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">

@@ -1,0 +1,19 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "contract": {
+    "name": "typicode"
+  }
+}
