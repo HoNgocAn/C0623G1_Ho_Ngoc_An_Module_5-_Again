@@ -8,6 +8,7 @@ import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
 import BlogSaga from "./component/BlogSaga";
 import CreateBlogSaga from "./component/CreateBlogSaga";
+import Error from "./component/Error";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/create-saga" element={<CreateBlogSaga/>}/>
             <Route path="/edit/:id" element={<EditBlog/>}/>
             <Route path="/edit" element={<EditBlog/>} />
+            <Route path="/error" element={<Error/>} />
         </Routes>
         <ToastContainer/>
     </div>

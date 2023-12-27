@@ -3,9 +3,12 @@ import {useState, useEffect} from "react";
 import * as method from "../service/method"
 import { toast } from "react-toastify";
 import {Link} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 
 function Blog () {
+
+    const navigate = useNavigate()
 
     const [post, setPost] = useState([]);
 
@@ -16,8 +19,12 @@ function Blog () {
     }, []);
 
     const getAll = async () => {
-        let data = await method.getAllPost();
-        setPost(data);
+        try {
+            let data = await method.getAllPost();
+            setPost(data);
+        } catch (e) {
+            navigate("/error")
+        }
     }
 
     const handlerPost = (post) => {
@@ -25,10 +32,14 @@ function Blog () {
     };
 
     const deletePost = async () => {
-        const isSuccess = await method.deletePost(postDelete.id)
-        if (isSuccess){
-            toast.success("Đã xóa thành công")
-            getAll();
+        try {
+            const isSuccess = await method.deletePost(postDelete.id)
+            if (isSuccess){
+                toast.success("Đã xóa thành công")
+                getAll();
+            }
+        } catch (e) {
+            navigate("/error")
         }
     }
 
